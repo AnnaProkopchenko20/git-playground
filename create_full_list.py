@@ -1,14 +1,16 @@
 def create_full_list(ok_words, word):
     final_list = []
     for i in ok_words :
-        letters = [word]
-        final_list.append(i)
+        is_word_fit = True
+        letters = [i for i in word]
         for j in i :
             if j in letters:
                 letters.remove(j)
             else:
-                final_list.pop(len(final_list)-1)
+                is_word_fit = False
                 break
+        if is_word_fit :
+            final_list.append(i)
     return final_list
 
 
