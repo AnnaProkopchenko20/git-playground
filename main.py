@@ -1,6 +1,5 @@
 import words_fetcher
 import random
-import  create_full_list
 from create_full_list import create_full_list
 
 
