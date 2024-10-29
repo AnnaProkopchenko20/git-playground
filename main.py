@@ -34,8 +34,11 @@ while not is_game_over():
         guesses.append(guess)
         if guessed == words_to_win:
             congratulate_user()
-            exit()
+            #sleep(20)
+            break
+            #exit()
         print(f"That's right! {words_to_win - guessed} to go")
     else:
         errors += 1
         print(f"Oops :( No such word, you have {ERRORS_TO_LOSE - errors} lives more")
+
