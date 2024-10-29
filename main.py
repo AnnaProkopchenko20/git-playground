@@ -4,7 +4,10 @@ from create_full_list import create_full_list
 
 
 def congratulate_user():
-    print(f"Congratulations, you won! your words: ", *guesses)
+    if guessed == words_to_win :
+        print(f"Congratulations, you won! your words: ", *guesses)
+    else :
+        print("Sorry, you lost!")
 
 
 
@@ -38,3 +41,4 @@ while not is_game_over():
         errors += 1
         if errors < 3:
             print(f"Oops :( No such word, you have {ERRORS_TO_LOSE - errors} lives more")
+congratulate_user()
