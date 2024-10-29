@@ -24,7 +24,7 @@ ERRORS_TO_LOSE = 3
 
 words = words_fetcher.fetch_words(min_letters=9, max_letters=9)
 word = words[random.randrange(0, len(words))]
-full_list = create_full_list(ok_words=words_fetcher.fetch_words(min_letters=3, max_letters=9),word=word)
+full_list = create_full_list(ok_words=words_fetcher.fetch_words(min_letters=2, max_letters=9),word=word)
 words_to_win = min(5, len(full_list))
 
 print(f"Can you make up {words_to_win} words from letters in word provided by me?")
@@ -36,7 +36,8 @@ while not is_game_over():
     if guess in full_list and guess not in guesses and guess != word:
         guessed += 1
         guesses.append(guess)
-        print(f"That's right! {words_to_win - guessed} to go")
+        if guessed < words_to_win:
+            print(f"That's right! {words_to_win - guessed} to go")
     else:
         errors += 1
         if errors < 3:
