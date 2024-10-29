@@ -1,9 +1,7 @@
 import words_fetcher
 import random
-
 from Validation import validate
 from create_full_list import create_full_list
-import Validation
 
 def congratulate_user():
     if guessed == words_to_win :
