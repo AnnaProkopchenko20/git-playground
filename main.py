@@ -1,7 +1,9 @@
 import words_fetcher
 import random
-from create_full_list import create_full_list
 
+from Validation import validate
+from create_full_list import create_full_list
+import Validation
 
 def congratulate_user():
     if guessed == words_to_win :
@@ -32,7 +34,7 @@ print(f"Your word is '{word}'")
 
 
 while not is_game_over():
-    guess = input("Your next take: ")
+    guess = validate(input=input("Your next take: "))
     if guess in full_list and guess not in guesses and guess != word:
         guessed += 1
         guesses.append(guess)
