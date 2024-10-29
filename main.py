@@ -38,5 +38,4 @@ while not is_game_over():
         errors += 1
         if errors < 3:
             print(f"Oops :( No such word, you have {ERRORS_TO_LOSE - errors} lives more")
-        else:
-            break
+
