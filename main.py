@@ -4,7 +4,8 @@ from create_full_list import create_full_list
 
 
 def congratulate_user():
-    print(f"Congratulations, you won! your words: {guesses}")
+    print(f"Congratulations, you won! your words: ", *guesses)
+
 
 
 def is_game_over():
@@ -32,13 +33,7 @@ while not is_game_over():
     if guess in full_list and guess not in guesses:
         guessed += 1
         guesses.append(guess)
-        if guessed == words_to_win:
-            congratulate_user()
-            #sleep(20)
-            break
-            #exit()
         print(f"That's right! {words_to_win - guessed} to go")
     else:
         errors += 1
         print(f"Oops :( No such word, you have {ERRORS_TO_LOSE - errors} lives more")
-
